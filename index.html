@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="面向重金属污染场地长期监测的 AI 生信分析平台建设方案" />
+  <title>AI 生信分析平台｜多组学研究工作台</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="返回顶部">
+      <span class="brand-mark"><span></span><span></span><span></span></span>
+      <span>BIOSYNTH <small>AI BIOINFORMATICS</small></span>
+    </a>
+    <nav aria-label="主要导航">
+      <a href="#mission">平台定位</a>
+      <a href="#workflow">分析闭环</a>
+      <a href="#architecture">系统架构</a>
+      <a href="#roadmap">建设路线</a>
+    </nav>
+    <a class="header-cta" href="#roadmap">
+      查看建设路线 <span class="material-symbols-outlined">arrow_downward</span>
+    </a>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span>面向污染场地长期监测的科研基础设施</p>
+        <h1>让复杂多组学数据<br />变成<span>可验证的科学发现</span></h1>
+        <p class="hero-lead">统一管理宏基因组、宏转录组、代谢、酶活与理化数据；让 AI 协助研究人员配置流程、解释结果、连接证据，并把每个结论追溯到数据与参数。</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#workflow">查看平台如何工作 <span class="material-symbols-outlined">south</span></a>
+          <button class="text-button" id="openPrinciple">平台设计原则 <span class="material-symbols-outlined">play_circle</span></button>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" aria-label="多组学证据网络示意">
+        <div class="orbit orbit-a"></div>
+        <div class="orbit orbit-b"></div>
+        <div class="core-node">
+          <span class="material-symbols-outlined">hub</span>
+          <strong>机制证据图谱</strong>
+          <small>Evidence Graph</small>
+        </div>
+        <div class="data-node node-1"><span>DNA</span><small>宏基因组</small></div>
+        <div class="data-node node-2"><span>RNA</span><small>宏转录组</small></div>
+        <div class="data-node node-3"><span>MET</span><small>代谢组</small></div>
+        <div class="data-node node-4"><span>ENV</span><small>理化指标</small></div>
+        <div class="data-node node-5"><span>HM</span><small>重金属</small></div>
+        <svg class="network-lines" viewBox="0 0 560 560" aria-hidden="true">
+          <line x1="280" y1="280" x2="115" y2="112"/><line x1="280" y1="280" x2="447" y2="115"/>
+          <line x1="280" y1="280" x2="504" y2="320"/><line x1="280" y1="280" x2="365" y2="490"/>
+          <line x1="280" y1="280" x2="84" y2="395"/><circle cx="280" cy="280" r="190"/>
+        </svg>
+      </div>
+
+      <div class="metric-strip reveal">
+        <div><strong>6</strong><span>核心工作台</span></div>
+        <div><strong>7</strong><span>步分析闭环</span></div>
+        <div><strong>5</strong><span>层系统架构</span></div>
+        <div><strong>3</strong><span>阶段建设路线</span></div>
+      </div>
+    </section>
+
+    <section id="mission" class="section-shell section-block">
+      <div class="section-heading reveal">
+        <p class="section-index">01 / MISSION</p>
+        <h2>平台解决的不是一次分析，<br />而是<strong>长期科研协作效率</strong></h2>
+        <p>从零散文件和脚本，转向可复现、可审计、可持续积累的研究系统。</p>
+      </div>
+
+      <div class="before-after reveal">
+        <article class="state-card before-card">
+          <div class="state-label"><span class="material-symbols-outlined">warning</span>当前状态</div>
+          <h3>数据很多，过程分散</h3>
+          <ul>
+            <li>样本表、测序文件和检测结果难以对齐</li>
+            <li>工具、参数和数据库版本依赖个人经验</li>
+            <li>分析结果难以复现，结论缺少完整证据链</li>
+            <li>新项目重复整理数据、写脚本和拼报告</li>
+          </ul>
+        </article>
+        <div class="transformation-mark">
+          <span class="material-symbols-outlined">arrow_forward</span>
+          <small>平台化</small>
+        </div>
+        <article class="state-card after-card">
+          <div class="state-label"><span class="material-symbols-outlined">verified</span>目标状态</div>
+          <h3>流程统一，证据持续沉淀</h3>
+          <ul>
+            <li>项目、场地、样本和多组学数据统一管理</li>
+            <li>标准流程可配置、可复用、可追踪</li>
+            <li>每个结果都连接输入、参数、版本与文献</li>
+            <li>AI 协助分析与解释，研究人员控制结论</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="persona-grid reveal">
+        <article><span class="material-symbols-outlined">terminal</span><div><h4>生信分析人员</h4><p>维护流程、参数和运行环境</p></div></article>
+        <article><span class="material-symbols-outlined">microbiology</span><div><h4>微生物研究人员</h4><p>寻找关键菌、基因与通路</p></div></article>
+        <article><span class="material-symbols-outlined">science</span><div><h4>环境研究人员</h4><p>解释污染物与理化变化</p></div></article>
+        <article><span class="material-symbols-outlined">monitoring</span><div><h4>项目负责人</h4><p>掌握质量、进度与结论</p></div></article>
+      </div>
+    </section>
+
+    <section id="workflow" class="workflow-section section-block">
+      <div class="section-shell">
+        <div class="section-heading light reveal">
+          <p class="section-index">02 / RESEARCH LOOP</p>
+          <h2>七步闭环，把数据推进到验证</h2>
+          <p>点击任一步骤，查看平台输入、自动化动作与可交付结果。</p>
+        </div>
+        <div class="workflow-layout reveal">
+          <div class="workflow-steps" role="tablist" aria-label="分析流程">
+            <button class="flow-step active" data-step="0"><b>01</b><span>创建项目</span></button>
+            <button class="flow-step" data-step="1"><b>02</b><span>接入数据</span></button>
+            <button class="flow-step" data-step="2"><b>03</b><span>自动质控</span></button>
+            <button class="flow-step" data-step="3"><b>04</b><span>运行流程</span></button>
+            <button class="flow-step" data-step="4"><b>05</b><span>联合分析</span></button>
+            <button class="flow-step" data-step="5"><b>06</b><span>机制候选</span></button>
+            <button class="flow-step" data-step="6"><b>07</b><span>验证沉淀</span></button>
+          </div>
+          <article class="workflow-detail" id="workflowDetail">
+            <p class="detail-tag">STEP 01</p>
+            <span class="material-symbols-outlined detail-icon">folder_managed</span>
+            <h3>创建项目与研究问题</h3>
+            <p>定义场地、污染物、菌剂、对照、采样时间和核心科学问题，让后续分析围绕同一研究设计展开。</p>
+            <div class="detail-meta"><span><b>输入</b>研究设计</span><span><b>输出</b>项目数据模型</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell section-block" id="workbenches">
+      <div class="section-heading reveal">
+        <p class="section-index">03 / WORKBENCHES</p>
+        <h2>六个工作台，覆盖从数据到成果的全过程</h2>
+      </div>
+      <div class="bento-grid reveal">
+        <article class="bento-card wide data-card">
+          <div class="card-top"><span class="material-symbols-outlined">database</span><em>01</em></div>
+          <h3>项目与数据工作台</h3>
+          <p>管理场地、采样点、时间、处理组、原始文件和检测记录，自动校验样本映射与元数据完整性。</p>
+          <div class="tag-row"><span>FASTQ</span><span>样本元数据</span><span>检测报告</span><span>权限</span></div>
+        </article>
+        <article class="bento-card pipeline-card">
+          <div class="card-top"><span class="material-symbols-outlined">account_tree</span><em>02</em></div>
+          <h3>生信流程工作台</h3>
+          <p>组装、分箱、MAG 质控、分类、丰度、功能注释与宏转录分析。</p>
+        </article>
+        <article class="bento-card analysis-card">
+          <div class="card-top"><span class="material-symbols-outlined">query_stats</span><em>03</em></div>
+          <h3>多组学分析工作台</h3>
+          <p>差异、时序、网络、中介、结构方程与交互式探索。</p>
+        </article>
+        <article class="bento-card mechanism-card">
+          <div class="card-top"><span class="material-symbols-outlined">schema</span><em>04</em></div>
+          <h3>机制探索工作台</h3>
+          <p>把微生物、基因、通路、环境变量与污染物变化组织成证据对象。</p>
+          <div class="evidence-scale"><span>存在</span><i></i><span>活性</span><i></i><span>关联</span><i></i><span>干预</span></div>
+        </article>
+        <article class="bento-card ai-card">
+          <div class="card-top"><span class="material-symbols-outlined">auto_awesome</span><em>05</em></div>
+          <h3>AI 分析助手</h3>
+          <p>将问题转为分析计划，受控调用工具，解释结果并生成可验证假设。</p>
+        </article>
+        <article class="bento-card report-card wide">
+          <div class="card-top"><span class="material-symbols-outlined">dashboard</span><em>06</em></div>
+          <h3>项目看板与报告中心</h3>
+          <p>展示数据到位率、流程状态、质量风险和验证进展；输出阶段报告与论文方法材料。</p>
+          <div class="mini-bars"><span style="--v:88%"></span><span style="--v:72%"></span><span style="--v:94%"></span><span style="--v:63%"></span><span style="--v:81%"></span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="architecture" class="architecture-section section-block">
+      <div class="section-shell architecture-grid">
+        <div class="section-heading reveal">
+          <p class="section-index">04 / ARCHITECTURE</p>
+          <h2>确定性分析引擎<br />与 AI 协作层分离</h2>
+          <p>点击架构层查看职责。AI 不直接替代统计工具，而是通过受控接口调用已经验证的能力。</p>
+          <div class="architecture-detail" id="architectureDetail">
+            <small>当前层级</small>
+            <h3>应用层</h3>
+            <p>面向不同角色提供项目、流程、探索、机制、报告和系统管理界面。</p>
+          </div>
+        </div>
+        <div class="layer-stack reveal" role="tablist" aria-label="系统架构层级">
+          <button class="layer-card layer-5 active" data-layer="0"><b>L5</b><span><strong>应用层</strong><small>项目 · 流程 · 探索 · 报告</small></span><i>RESEARCH EXPERIENCE</i></button>
+          <button class="layer-card layer-4" data-layer="1"><b>L4</b><span><strong>AI 协作层</strong><small>规划 · 调用 · 检索 · 解释</small></span><i>CONTROLLED AGENTS</i></button>
+          <button class="layer-card layer-3" data-layer="2"><b>L3</b><span><strong>分析服务层</strong><small>组学 · 统计 · 可视化 · 机制</small></span><i>ANALYTICS</i></button>
+          <button class="layer-card layer-2" data-layer="3"><b>L2</b><span><strong>计算与工作流层</strong><small>容器 · 队列 · 调度 · 监控</small></span><i>REPRODUCIBLE COMPUTE</i></button>
+          <button class="layer-card layer-1" data-layer="4"><b>L1</b><span><strong>数据与治理层</strong><small>对象存储 · 元数据 · 权限 · 谱系</small></span><i>TRUSTED FOUNDATION</i></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell section-block" id="ai-guardrails">
+      <div class="section-heading reveal">
+        <p class="section-index">05 / AI GUARDRAILS</p>
+        <h2>AI 负责加速研究，<strong>不替代科学判断</strong></h2>
+      </div>
+      <div class="guardrail-grid reveal">
+        <article class="allowed-panel">
+          <div class="panel-icon"><span class="material-symbols-outlined">auto_awesome</span></div>
+          <p class="panel-label">AI 可以做</p>
+          <h3>理解、编排、解释、复用</h3>
+          <ul>
+            <li><span class="material-symbols-outlined">check</span>将科学问题拆成分析计划</li>
+            <li><span class="material-symbols-outlined">check</span>推荐经过审核的工作流与参数</li>
+            <li><span class="material-symbols-outlined">check</span>解释质控、图表和模型结果</li>
+            <li><span class="material-symbols-outlined">check</span>检索项目证据和公开文献</li>
+            <li><span class="material-symbols-outlined">check</span>生成可被否证的机制候选</li>
+          </ul>
+        </article>
+        <article class="blocked-panel">
+          <div class="panel-icon"><span class="material-symbols-outlined">shield_lock</span></div>
+          <p class="panel-label">系统必须阻止</p>
+          <h3>越权、虚构、跳过验证</h3>
+          <ul>
+            <li><span class="material-symbols-outlined">close</span>绕过权限访问或修改原始数据</li>
+            <li><span class="material-symbols-outlined">close</span>执行未经审核的任意代码</li>
+            <li><span class="material-symbols-outlined">close</span>生成无法追溯来源的数值</li>
+            <li><span class="material-symbols-outlined">close</span>把文献常识替代为项目证据</li>
+            <li><span class="material-symbols-outlined">close</span>把相关性标记为已确认机制</li>
+          </ul>
+        </article>
+      </div>
+      <div class="audit-line reveal">
+        <span class="material-symbols-outlined">fingerprint</span>
+        <p><b>每次 AI 输出都附带审计指纹</b><small>输入数据版本 · 工作流版本 · 关键参数 · 引用来源 · 置信度 · 待验证项</small></p>
+      </div>
+    </section>
+
+    <section id="roadmap" class="roadmap-section section-block">
+      <div class="section-shell">
+        <div class="section-heading light reveal">
+          <p class="section-index">06 / ROADMAP</p>
+          <h2>从一个真实项目开始，逐步扩展平台能力</h2>
+        </div>
+        <div class="roadmap-tabs reveal" role="tablist" aria-label="建设阶段">
+          <button class="roadmap-tab active" data-phase="0"><span>PHASE 01</span><b>最小闭环</b></button>
+          <button class="roadmap-tab" data-phase="1"><span>PHASE 02</span><b>多组学与验证</b></button>
+          <button class="roadmap-tab" data-phase="2"><span>PHASE 03</span><b>多项目平台化</b></button>
+        </div>
+        <article class="roadmap-content reveal" id="roadmapContent">
+          <div>
+            <p class="phase-kicker">首要目标</p>
+            <h3>证明一次完整研究可以在平台内复现</h3>
+            <p>选择一个数据较完整的场地和一种重点重金属，打通从数据导入到报告输出的完整路径。</p>
+          </div>
+          <div class="phase-deliverables">
+            <p>交付内容</p>
+            <ul><li>项目与样本管理</li><li>宏基因组标准流程</li><li>理化与金属数据联动</li><li>AI 解释与报告草稿</li></ul>
+          </div>
+          <div class="phase-gate"><span class="material-symbols-outlined">flag</span><p><small>阶段门槛</small><b>同一输入可稳定复现同一结果</b></p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell section-block" id="success">
+      <div class="section-heading reveal">
+        <p class="section-index">07 / SUCCESS</p>
+        <h2>平台成功，不看“用了多少 AI”</h2>
+        <p>真正的衡量标准是科研效率、复现性和候选机制能否进入验证。</p>
+      </div>
+      <div class="success-grid reveal">
+        <article><span>01</span><h3>数据质量</h3><p>关键元数据缺失可被自动发现并阻断。</p></article>
+        <article><span>02</span><h3>流程复现</h3><p>相同输入与版本能够得到一致结果。</p></article>
+        <article><span>03</span><h3>分析效率</h3><p>从数据到首版结果的人工操作明显减少。</p></article>
+        <article><span>04</span><h3>AI 可靠性</h3><p>数值、工具调用和解释来源全部可追溯。</p></article>
+        <article><span>05</span><h3>科研价值</h3><p>机制候选可以转化为明确的验证任务。</p></article>
+      </div>
+    </section>
+
+    <section class="cta-section section-shell reveal">
+      <div>
+        <p class="section-index">NEXT STEP</p>
+        <h2>先选定一个示范场地，<br />开始平台的第一条完整链路。</h2>
+      </div>
+      <div class="cta-list">
+        <span>目标重金属</span><span>数据目录</span><span>现有流程</span><span>计算环境</span><span>MVP 验收项目</span>
+      </div>
+      <a class="primary-button" href="#roadmap">回到建设路线 <span class="material-symbols-outlined">arrow_upward</span></a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand"><span class="brand-mark"><span></span><span></span><span></span></span><span>BIOSYNTH</span></div>
+    <p>AI-assisted multi-omics research infrastructure</p>
+    <a href="#top">返回顶部 <span class="material-symbols-outlined">north</span></a>
+  </footer>
+
+  <dialog id="principleDialog">
+    <button class="dialog-close" id="closePrinciple" aria-label="关闭"><span class="material-symbols-outlined">close</span></button>
+    <p class="section-index">DESIGN PRINCIPLE</p>
+    <h2>平台先固化可信流程，<br />再让 AI 放大科研效率。</h2>
+    <p>确定性工具负责计算，AI 负责理解问题、组织步骤和解释结果。任何重要结论都必须回到样本、参数、统计检验与实验验证。</p>
+    <div class="dialog-chain"><span>数据</span><i>→</i><span>流程</span><i>→</i><span>证据</span><i>→</i><span>验证</span></div>
+  </dialog>
+
+  <script src="./app.js"></script>
+</body>
+</html>
